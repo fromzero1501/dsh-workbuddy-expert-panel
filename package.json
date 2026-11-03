@@ -1,0 +1,28 @@
+{
+  "name": "dsh-workbuddy-expert-panel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "探测本机 WorkBuddy 专家（含专家团），在 DSH 侧边栏面板展示，并可转换为 DSH skill / preset",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-gateway",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-commands"
+      ]
+    }
+  }
+}
